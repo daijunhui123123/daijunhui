@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>做代码界的导演</title>
+    <style>
+    /* css resets 预处理 */
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    html, body {
+        height: 100%;
+    }
+    body {
+        background:#000 url(//cssanimation.rocks/demo/starwars/images/bg.jpg);
+    }
+    .starwars-demo {
+        /* px绝对单位  
+        适配
+        em是一个相对单位 相对自身的字体大小  1em = 272*17= 16px */
+        height: 17em;
+        /* font-size: 14px; */
+        width: 34em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* 背景调试法 */
+        /* background: red; */
+        /* 支持3D变化 */
+        /* 远近 视点 */
+        perspective: 800px;
+        transform-style: preserve-3d;
+    }
+    .star, .wars, .byline {
+        position: absolute;
+    }
+    img {
+        /* 图片是inline元素 block元素 */
+        width: 100%;
+    }
+    .star {
+        top: -0.75em;
+        animation: star 10s ease-out infinite;
+    }
+    .wars {
+        bottom: -0.5em;
+        animation: stars 10s ease-out infinite;
+    }
+    
+    @keyframes  star {
+        0% {
+            opacity: 0;
+            transform: scale(1.5) translateY(-0.75em);
+        }
+        20% {
+            opacity: 1;
+        }
+        89% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateZ(-1000em);
+        }
+    }
+
+    @keyframes wars {
+        0% {
+         opacity: 0;
+         transform: scale(1.5) translateY(0.5em);   
+        }
+        20% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateZ(-1000em);
+        }
+    }
+
+    .byline {
+        color: #fff;
+        font-family: "ITC Serif Gothic", Lato;
+        font-size:2.25em;
+        left: -2em;
+        right: -2em;
+        letter-spacing: 0.4em;
+        text-align: center;
+        text-transform: uppercase;
+        top: 38%;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- - 先写结构
+    - 再写css 
+    优化的地方？ 加速 emeet 快捷输入语法 css选择器
+    -->
+    <!-- <div class="starwars-demo">
+
+    </div> -->
+    <!-- starwars 开场动画效果 -->
+    <div class="starwars-demo">
+        <!-- [] 属性选择器 -->
+        <img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="" class="star">
+        <img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="" class="wars">
+        <!-- 语义化 -->
+        <h2 class="byline" id="byline">THE FORCE AWAKENS</h2>
+        <!-- <img 
+        class="star"
+        src="//cssanimation.rocks/demo/starwars/images/star.svg" 
+        alt="">
+        <img 
+        class="wars"
+        src="//cssanimation.rocks/demo/starwars/images/star.svg" alt=""> -->
+    </div>
+</body>
+</html>

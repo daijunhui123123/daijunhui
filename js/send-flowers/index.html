@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送花-设计模型</title>
+</head>
+
+<body>
+    <script>
+        //JS代码 强大的表现力
+        // alert('hello');
+        const djh = {
+            name: '戴俊辉',//字符串
+            age: 20,  //number 不分整数的小数  
+            hometown: 'nanchang',
+            isSingle: true,//boolean
+            sendFlower: function (target) {
+                target.receiveFlower(djh);
+            }
+        }
+        const lym = {
+            name: '戴俊辉',//字符串
+            age: 21,
+            hometown: 'nanchang',
+            isSingle: true,
+        }
+        const xm = {
+            name: '小美',//字符串
+            age: 21,
+            hometown: '上饶',
+            isSingle: true,
+            xq: 50,
+
+            receiveFlower: function (sender) {
+                // console.log('谢谢你' + sender.name);
+                if (xm.xq < 80) {
+                    console.log('谢谢你，我很喜欢');
+                } else {
+                    console.log('我不喜欢');
+                }
+            }
+        }
+        const xiaohong = {
+            name: '戴俊辉',//字符串
+            age: 21,
+            hometown: 'nanchang',
+            isSingle: true,
+            receiveFlower: function (sender) {
+                // 
+                setTimeout(() => {
+                    xm.xq = 99;
+                    xm.receiveFlower(sender);
+                }, 3000)
+            }
+        }
+
+
+
+        // console.log('djh.age');
+    </script>
+</body>
+
+</html>
