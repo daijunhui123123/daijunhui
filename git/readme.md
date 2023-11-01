@@ -6,6 +6,9 @@
     - 反馈一个成功初始化一个代码仓库  
          git 仓库不能嵌套  
          .git的文件夹   仓库的秘密，不要去动他
+         默认  master/main 主分支  
+         HEAD 指针指向第一次提交  
+         暂存区 和仓库俩部分
  - 本地代码厂库  
 - git 是一个开源的版本控制系统，  
    仓库里放的文件的多个版本  
@@ -29,4 +32,16 @@ git  是一个分步试的
    当前的修改和上一次修改  改啦那些地方  
    git diff  比较修改 在提交前用  
 - commit -m''  不能乱写，写清楚完成了什么任务  
-   - leader 以后就看-m 后的东西了解  我们的工作
+   - leader 以后就看-m 后的东西了解  我们的工作  
+- git status 随时了解使用这个命令了解我们当前仓库状态  
+- git log  
+    打印所有的提交  
+    唯一的ID hash  
+    HEAD 指针  指向目前最后一次提交  
+    master  代表分支  main  
+- 可以通过git reset 快速来到任务一个版本  
+    version control 秒懂  小猪    
+- git reset --hard id  可以让我们返回前面  
+    git relog   所以的记录操作  
+- changes +untracked  
+   
