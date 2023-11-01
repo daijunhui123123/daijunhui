@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    /* 天坑 */
+}
+
+html {
+    font-size: 10px;
+    background: url(./background.jpg) bottom center;
+    background-size: cover;
+    /* 超出则裁剪*/
+
+}
+
+.keys {
+    height: 100%;
+    display: flex;
+    /*弹性布局 */
+    align-items: center;
+    justify-content: center;
+    /* background-color: pink; */
+}
+
+.key {
+    border: .4rem solid black;
+    border-radius: .4rem;
+    margin: 1rem;
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
+    text-align: center;
+    width: 10rem;
+    color: white;
+    background: rgb(0, 0, 0, .4);
+}
