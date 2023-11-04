@@ -1,0 +1,18 @@
+/* 模块化  */
+.spec{
+  /* 新的格式化上下文 */
+  display: flex;
+  font-size: 24rpx;
+  border-bottom: 1px solid #ededed;
+}
+.spec .item {
+  border-right: 1px solid #ededed;
+  padding: 64rpx;
+  /* 子元素里设置多个元素的flex 比例分配 */
+  /* flex: 1; */
+  width:50%;
+}
+/* spec 模块 */
+.spec .item .value text {
+    font-size: 60rpx;
+}

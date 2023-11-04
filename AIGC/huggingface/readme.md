@@ -7,4 +7,6 @@
     google 在线NLP平台 
     .i p y n b     n  o t e b o o k 
 - pipeline 核心模块 ，启动模块  
-   水管子
+   水管子  
+- pipeline(task指定任务,model)  
+    遥遥领先 ，中文模型 
