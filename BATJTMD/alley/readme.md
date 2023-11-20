@@ -5,7 +5,7 @@
 -  npm i -g   stylus
      node 是全栈 js的后端开发 
       npm 是node 的包管理器  
-      stylus 包是用来提升 css  开发速度
+      Stylus 样式文件为普通的 CSS 文件
       i  install 的简称  
       -g 全局安装
       stylus   --version  
