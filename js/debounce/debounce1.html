@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>性能优化</title>
+</head>
+
+<body>
+    <input type="text" id="unDebounce">
+</body>
+<script>
+    const inputA = document.getElementById('unDebounce')//事件监听
+    // 这是异步代码
+    //事件的异步代码在底层怎么操作？？
+    // 有个地方把这个关系存起来， 等到keyup事件发生后，再去执行这个函数
+    // eventBus  事件总线
+    inputA.addEventListener('keyup', function (e) //keyup事件  手离开按键函数执行
+    {
+        console.log('keyup了')
+    })
+</script>
+
+</html>
