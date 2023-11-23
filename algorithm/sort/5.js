@@ -1,23 +1,24 @@
-let count = 0
-var fibonacci = function (n) {
-    count++
-    return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2)
-}
-function memorize(f) {
-    if (typeof f !== 'function') return;
-    var cache = {} // 空间换时间 自由变量
-    return function () {
-        var key = arguments.length +
-            Array.prototype.join.call(arguments, ',')
-        if (key in cache) {
-            return cache[key]
-        } else {
-            return cache[key] = f.apply(this, arguments)
+// 数组的右边，有大部份排好序的，出现不需要比较 j-i-1的
+// 标记上一轮，完成交换的最后一次的位置， 最后的位置 < j-i-1 
+const bubbleSort = (arr) => {
+    let tmp = 0;
+    let lastExchangeIndex = 0; // 
+    let arrLen = arr.length;
+    let sortBorder = arrLen - 1;
+    for (let i = 0; i < arrLen - 1; i++) {
+        let isSorted = true;
+        for (let j = 0; j < sortBorder; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+                isSorted = false;
+                lastExchangeIndex = j;
+            }
+        }
+        sortBorder = lastExchangeIndex
+        if (isSorted) {
+            break;
         }
     }
+
+    return arr
 }
-console.time("time begin")
-fibonacci = memorize(fibonacci)
-console.log(fibonacci(2000))
-console.log(count)
-console.timeEnd('fibonacci')

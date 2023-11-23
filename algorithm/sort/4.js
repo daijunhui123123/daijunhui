@@ -15,7 +15,7 @@ function bubbleSort(arr) {
             break
         }
     }
-    console.timeEnd('改进冒泡顺序')
+    console.timeEnd('改进冒泡排序')
     return arr
 }
 // 待排序   从小到大排序
