@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  background-color: #d43030;
+}
+
+.login {
+  height: 100vh;
+  padding: 0 45px;
+}
+
+.login .login__hd {
+  width: 90px;
+  height: 27px;
+  font-family: Microsoft YaHei;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 22px;
+  margin-left: 99px;
+  margin-right: 96px;
+}
+
+.login .logo img {
+  width: 139px;
+  height: 139px;
+  margin-top: 71px;
+  margin-left: 75px;
+  margin-right: 71px;
+}
+
+.login .login__wrap {
+  margin-top: 160px;
+  overflow: auto;
+}
+
+.login .login__wrap span {
+  display: inline-block;
+  color: #fff;
+  font-size: 20px;
+  font-family: Microsoft YaHei;
+}
+
+
+.login .login__wrap input {
+  width: 211px;
+  height: 42px;
+  text-indent: 5px;
+  color: #fff;
+  border-radius: 2px;
+  font-size: 16px;
+  line-height: 150%;
+  border: #999 solid 1px;
+  margin-left: 24px;
+
+}
+
+.login .login__wrap .login__wrap--password {
+  margin-top: 40px;
+}
+
+.login .login__wrap button {
+  margin-top: 50px;
+  width: 271px;
+  height: 36px;
+  left: 60px;
+  top: 583px;
+  border: 1px solid beige;
+  color: rgba(80, 80, 80, 1);
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 16px;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+}

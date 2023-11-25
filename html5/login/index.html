@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="login">
+        <div class="login__hd">网易云音乐</div>
+        <div class="logo"><img src="1.png" alt=""></div>
+        <div class="login__wrap">
+            <div id="loginForm">
+                <div class="login__wrap--number">
+                    <span>账号</span>
+                    <input type="text" id="number" name="number" placeholder="请输入账号">
+                </div>
+                <div class="login__wrap--password">
+                    <span>密码</span>
+                    <input type="password" id="password" name="password" placeholder="请输入密码">
+                </div>
+                <button type="button" id="button">登入</button>
+            </div>
+        </div>
+    </div>
+    <div id="tanchu" style="display: none;">
+
+    </div>
+
+    <script>
+        let btn = document.getElementById('button')
+        let number = document.getElementById('number')
+        let password = document.getElementById('password')
+        let tanchu = document.getElementById('id')
+        btn.addEventListener('click', () => {
+
+            fetch(`http://192.168.31.26:3000/login?username=${number.value}&password=${password.value}`)
+                .then(data => {
+                    return data.json()
+                })
+                .then((res) => {
+                    console.log(res)
+                    console.log(tan)
+                    tanchu.style.display = 'block'
+                    const timeID = setTimeout(function () {
+                        tanchu.style.display = 'none'
+                    }, 3000)
+                })
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>
