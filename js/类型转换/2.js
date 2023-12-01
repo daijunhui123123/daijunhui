@@ -1,0 +1,1 @@
+Object.prototype.toString.call({ call: 1 })

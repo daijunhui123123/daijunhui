@@ -7,9 +7,9 @@
 const p = new Promise((resolve, reject) => {
     console.log('实例化promise')
     //异步任务
-    setTimeout(() => {
-        console.log('定时器运行')
-    }, 1000);
+    // setTimeout(() => {
+    //     console.log('定时器运行')
+    // }, 1000);
     resolve()
 })
 console.log(p)
