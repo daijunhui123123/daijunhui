@@ -1,1 +1,5 @@
-Object.prototype.toString.call({ call: 1 })
+// Object.prototype.toString.call({a: 1})
+
+Number({})  // Number('[object Object]')  // NaN
+
+String([]) // String('')  // ''
