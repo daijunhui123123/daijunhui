@@ -1,4 +1,4 @@
-async function fn1() {     //'fn2 end'    'fn3 end'    'fn1 end'   'setTimeout' 'setTimeout end'  'then'  'then2 end'
+async function fn1() {     //'fn2 end'    'fn3 end'    'fn1 end'   'setTimeout'++ 'setTimeout end'  'then'  'then2 end'
     await fn2()
     await fn3()
     console.log('fn1 end');

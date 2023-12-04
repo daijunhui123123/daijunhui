@@ -1,4 +1,4 @@
-console.log(1);
+console.log(1);//1  3  2  4  5   6
 
 setTimeout(() => {
     console.log(2);
