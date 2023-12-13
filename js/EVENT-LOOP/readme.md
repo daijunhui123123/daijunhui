@@ -19,7 +19,7 @@
     2. 没有锁的概念，节约上下文切换的时间
 
 # 异步 
- - 宏任务 （macrotask）：script（整体代码）、setTimeout、setInterval、setImmediate'I/O、UI-rendering交互事件
+ - 宏任务 （macrotask）：script（整体代码）、setTimeout、setInterval、setImmediate'I/O、UI-rendering交互事件，onreadystatechange
  - 微任务 （microtask）：Promise.then、MutationObserver,process.nextTick()
   
 # Event Loop

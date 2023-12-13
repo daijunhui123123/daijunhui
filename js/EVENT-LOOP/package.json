@@ -1,0 +1,12 @@
+{
+  "name": "event-loop",
+  "version": "1.0.0",
+  "description": "- 进程指的是cpu运行指令和保存上下文所需要的时间\r  - 线程是进程中更小的单位，指的是一段指令所运行的时间",
+  "main": "1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
