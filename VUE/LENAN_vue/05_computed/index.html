@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+
+
+    <template id="my-app">
+        <h2>当前温度{{temp}}</h2>
+        <h3>建议穿{{cloth}}</h3>
+        <button @click="minus">-5</button>
+        <button @click="add">+5</button>
+    </template>
+
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/vue/3.3.4/vue.global.js"></script>
+    <script>
+        Vue.createApp({
+            template: '#my-app',
+            data() {
+                return {
+                    temp: 20,
+                    // cloth: '夹克'
+                }
+            },
+            // 计算属性
+            computed: {//  计算属性是响应式执行的，函数会再所依赖的变量值发生改变时重新执行
+                cloth() {
+                    if (this.temp > 28) {
+                        return '短袖'
+                    } else {
+                        return '棉衣'
+                    }
+                }
+                //数据源里面不要cloth
+            },
+
+            methods: {
+                minus() {
+                    this.temp -= 5;
+                },
+                add() {
+                    this.temp += 5;
+                }
+            }
+
+        }).mount('#app')
+    </script>
+</body>
+
+</html>
