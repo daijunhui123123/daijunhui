@@ -26,7 +26,7 @@
                 </tr>
             </tbody>
         </table>
-        <h2>总价格: 31231</h2>
+        <h2>总价格: {{ allPrice }}</h2>
     </div>
 
     <div>
@@ -50,8 +50,10 @@ export default {
     },
     methods: {
         minus(index) {
-            if (this.lists[index].count > 0)
+            if (this.lists[index].count > 1) {
                 this.lists[index].count -= 1;
+            }
+
         },
         add(index) {
             console.log(index);
@@ -65,8 +67,15 @@ export default {
     ,
     // 计算属性
     computed: {
+        allPrice() {
 
+            let sum = 0;
+            for (let item of this.lists) {
+                sum += item.price * item.count;
+            }
+            return sum;
 
+        }
     }
 }
 </script>
