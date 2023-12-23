@@ -17,18 +17,18 @@
                 <div class="item_list_container" v-if="questionList.length">
                     <header class="item_title">{{ questionList[itemNum - 1].topic_name }}</header>
                     <ul>
-                        <li class="item_list"
-                            v-for="(item, index) in         questionList[itemNum - 1].topic_answer        "
-                            @click="choosed(index)">
-                            <span class="option_style" :class="{ 'current': currentNum === index }">{{ chooseType(index)
-                            }}</span>
+                        <li class="item_list" v-for="(item, index) in questionList[itemNum - 1].topic_answer"
+                            @click="choosed(index, item.topic_answer_id)">
+                            <span class="option_style"
+                                :class="{ 'current': currentNum === index }">{{ chooseType(index) }}</span>
                             <span class="option_detail">{{ item.answer_name }}</span>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <span class="next_item button_style" @click="chooesd()"></span>
+            <span v-if="itemNum < questionList.length" class="next_item button_style" @click="nextItem"></span>
+            <span v-else class="submit_item button_style" @click="submit"></span>
         </div>
 
     </section>
@@ -40,8 +40,12 @@ export default {
     props: ['parentComponent'],
     data() {
         return {
-            currentNum: null,
+            currentNum: null, // 有没有选中一个答案
+            chooseId: null // 最终确认要保存的答案
         }
+    },
+    computed: {
+        ...mapState(['questionList', 'itemNum'])
     },
     methods: {
         chooseType(index) {
@@ -50,22 +54,29 @@ export default {
             if (index === 2) return 'C'
             if (index === 3) return 'D'
         },
-        ...mapActions(['nextItemAction']),
+        choosed(index, id) {
+            // 点谁谁就要高亮，保存被选中的答案
+            this.currentNum = index
+            this.chooseId = id
+        },
         nextItem() {
-            if (this.currentNum === null) {
-                this.nextItemAction()
-                this.currentNum === null
+            if (this.currentNum !== null) {
+                this.nextItemAction(this.chooseId)
+                this.currentNum = null
             } else {
-                alert('请先选择答案')
+                alert('请选择一个答案')
+            }
+
+        },
+        submit() {
+            if (this.currentNum !== null) {
+                this.nextItemAction(this.chooseId) // 存答案
+                this.$router.push('/score')
+            } else {
+                alert('请选择一个答案')
             }
         },
-        choosed(index) {
-            // 点谁谁变色，保存被选中的答案
-            this.currentNum = index
-        }
-    },
-    computed: {
-        ...mapState(['questionList', 'itemNum']),
+        ...mapActions(['nextItemAction'])
     }
 }
 </script>
@@ -172,4 +183,7 @@ export default {
 .next_item {
     background-image: url(../assets/images/2-2.png);
 }
-</style>
+
+.submit_item {
+    background-image: url(../assets/images/3-1.png);
+}</style>
