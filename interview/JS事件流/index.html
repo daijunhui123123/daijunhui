@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+
+        .b {
+            width: 150px;
+            height: 150px;
+            background-color: blue;
+        }
+
+        .c {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <div class="b">
+            <div class="c">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let a = document.querySelector('.a');
+        let b = document.querySelector('.b');
+        let c = document.querySelector('.c');
+
+        a.addEventListener('click', function
+            () {
+            console.log('a被点击');
+        }, true)
+        b.addEventListener('click', function
+            () {
+            console.log('b被点击');
+        })
+        c.addEventListener('click', event => {
+            console.log('c被点击');
+            event.stopPropagation();//阻止事件冒泡
+
+
+
+
+
+
+
+
+        })
+    </script>
+</body>
+
+</html>

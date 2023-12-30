@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+
+    <!-- <script>
+        //   点击哪一个li，就log出哪个内容
+        var lis = document.getElementsByTagName('li');
+
+    //    lis.__proto__.forEach=Array.prototype.forEach;
+
+       // 
+        Array.from(lis).forEach(function (li) {
+            li.addEventListener('click', function () {
+                console.log(this.innerText);
+            })
+        })
+        // 事件委托
+    </script> -->
+    <script>
+        //   点击哪一个li，就log出哪个内容
+        var ul = document.getElementsByTagName('ul')[0];
+        ul.addEventListener('click', (event) => {
+            // 此时事件流从哪里来到ul
+            console.log(event.target.innerText);
+        })
+    </script>
+</body>
+
+</html>
