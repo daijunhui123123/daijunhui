@@ -42,22 +42,16 @@
         a.addEventListener('click', function
             () {
             console.log('a被点击');
+
+
         }, true)
         b.addEventListener('click', function
             () {
             console.log('b被点击');
+            event.stopPropagation();
         })
         c.addEventListener('click', event => {
             console.log('c被点击');
-            event.stopPropagation();//阻止事件冒泡
-
-
-
-
-
-
-
-
         })
     </script>
 </body>
