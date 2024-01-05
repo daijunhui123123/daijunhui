@@ -19,7 +19,7 @@ let props = defineProps({
     }
 } //   string  数据类型
 );
-let emit = defineEmits(['update:value'])
+let emit = defineEmits(['update-rate'])
 // 计算属性 ，data/ props 
 let width = ref(props.value)
 let rate = computed(() => "★★★★★☆☆☆☆☆".slice(5 - props.value, 10 - props.value));
@@ -35,7 +35,7 @@ const mouseOut = () => {
 }
 const onRate = (num) => {
     // 鼠标点击,数据和状态的统一
-    emit('update:value', num)
+    emit('update-rate', num)
 
 }
 </script>
