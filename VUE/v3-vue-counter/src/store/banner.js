@@ -1,14 +1,16 @@
 import { defineStore } from 'pinia'
-import { reactive } from 'vue'
+import { ref } from 'vue'
 import { getBannerData } from '../api/index'
 
 export const useBannerStore = defineStore('banner', () => {
-    const [banners, setBanners] = reactive([])
+    let banners = ref([])
     return {
         banners,
         getBanners: async () => {
-            const { banners } = await getBannerData();
-            setBanners(banners)
+            const data = await getBannerData();
+            // setBanners(banners)
+            // console.log(data, '///')
+            banners.value = data
         }
     }
 })

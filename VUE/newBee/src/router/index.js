@@ -7,6 +7,11 @@ const routes = [
     redirect: '/home'
   },
   {
+    path: '/login',
+    name: 'login',
+    component: () => import('@/views/Login.vue')
+  },
+  {
     path: '/home',
     name: 'home',
     component: Home
@@ -14,17 +19,22 @@ const routes = [
   {
     path: '/category',
     name: 'category',
-    component: () => import('@/views/Category.vue')//路由的懒加载
+    component: () => import('@/views/Category.vue') // 路由的懒加载
   },
   {
     path: '/cart',
     name: 'cart',
-    component: () => import('@/views/Cart.vue')//路由的懒加载
+    component: () => import('@/views/Cart.vue')
   },
   {
     path: '/user',
     name: 'user',
-    component: () => import('@/views/User.vue')//路由的懒加载
+    component: () => import('@/views/User.vue')
+  },
+  {
+    path: '/product',
+    name: 'product',
+    component: () => import('@/views/ProductDetail.vue')
   }
 ]
 

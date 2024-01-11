@@ -11,23 +11,30 @@
         <router-link to="#" class="search-title">欢迎进店</router-link>
       </div>
 
-      <router-link to="/login" class="login">登录</router-link>
+      <router-link to="/login" class="login" v-if="!state.isLogin">登录</router-link>
+
+      <router-link to="/user" class="login" v-else>
+        <van-icon name="manager-o" />
+      </router-link>
 
     </header>
 
     <Swiper id="test" :list="state.swiperList" />
 
     <div class="category-list">
-      <div v-for="item  in state.categoryList" :key="item.categoryList" @click="goDetail(item.name)">
+      <div v-for="item in state.categoryList" :key="item.categoryId" @click="goDetail(item.name)">
         <img :src="item.imgUrl" alt="">
         <span>{{ item.name }}</span>
       </div>
     </div>
-    <GoodsList :goodsList="state.goodsList" title="新品上线" />
 
-    <GoodsList :goodsList="state.hotGoodses" title="热门商品" />
-    <GoodsList :goodsList="state.recommendGoodses" title="最新推荐" />
-    <!-- football -->
+    <GoodsList :list="state.newGoodsList" title="新品上线" />
+
+    <GoodsList :list="state.hotGoodsList" title="热门商品" />
+
+    <GoodsList :list="state.recommendGoodsList" title="最新推荐" />
+
+    <!-- footBar -->
     <NavBar />
   </div>
 </template>
@@ -39,9 +46,6 @@ import { getHome } from '@/api/home.js'
 import { showToast } from 'vant';
 import GoodsList from '../components/GoodsList.vue';
 import NavBar from '../components/NavBar.vue';
-const goDetail = (name) => {
-  showToast(name);
-}
 
 const state = reactive({ // state是被reactive修饰过的对象，也就是响应式对象
   swiperList: [],
@@ -88,32 +92,37 @@ const state = reactive({ // state是被reactive修饰过的对象，也就是响
       categoryId: 100010
     }
   ],
-  goodsList: [],
-  hotGoodses: [],
-  recommendGoodses: [],
-  headerActive: false
+  newGoodsList: [],
+  hotGoodsList: [],
+  recommendGoodsList: [],
+  headerActive: false,
+  isLogin: false
 })
-
 
 // 请求banner数据
 onMounted(async () => {
+  const token = localStorage.getItem('token')
+  if (token) {
+    state.isLogin = true
+  }
+
   const { data } = await getHome()
-  console.log(data);
-  state.swiperList = data.data.carousels
-  state.goodsList = data.data.newGoodses
-  state.hotGoodses = data.data.hotGoodses
-  state.recommendGoodses = data.data.recommendGoodses
+  // console.log(data);
+  state.swiperList = data.carousels
+  state.newGoodsList = data.newGoodses
+  state.hotGoodsList = data.hotGoodses
+  state.recommendGoodsList = data.recommendGoodses
 })
-nextTick(() => {
-  // 写在nextTick中的逻辑一定会在页面加载完毕后执行
+
+const goDetail = (name) => {
+  showToast(name);
+}
+
+
+nextTick(() => { // 写在nextTick中的逻辑一定会在页面加载完毕后执行
   document.body.addEventListener('scroll', function () {
+    // console.log(this.scrollTop);
     this.scrollTop > 100 ? state.headerActive = true : state.headerActive = false
-
-
-
-
-
-
   })
 })
 
@@ -185,12 +194,10 @@ nextTick(() => {
   }
 
   .category-list {
-    //网格布局
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-row-gap: 5px; //行间距
+    grid-row-gap: 5px;
 
-    // flex-wrap: wrap; //单行显示并换行
     div {
       display: flex;
       flex-direction: column;
@@ -198,12 +205,9 @@ nextTick(() => {
       align-items: center;
 
       img {
-
         .wh(36px, 36px);
-        margin: 13px 0 8px 0;
+        margin: 13px auto 8px auto;
       }
     }
   }
-
-}
-</style>
+}</style>
