@@ -36,11 +36,11 @@ const handaddCart = async () => {
 
 <style lang="less" scoped></style>
 <style>
-.van-button--warning {
+.van-action-bar .van-button--warning {
     background: linear-gradient(to right, #6bd8d8, #1baeae);
 }
 
-.van-button--danger {
+.van-action-bar .van-button--danger {
     background: linear-gradient(to right, #0dc3c3, #098888);
 }
 </style>
