@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <header class="home-header" :class="{ 'active': state.headerActive }">
+    <header class="home-header" :class="{'active': state.headerActive}">
       <router-link to="#">
         <i class="iconfont icon-menu"></i>
       </router-link>
@@ -20,19 +20,19 @@
     </header>
 
     <Swiper id="test" :list="state.swiperList" />
-
+    
     <div class="category-list">
       <div v-for="item in state.categoryList" :key="item.categoryId" @click="goDetail(item.name)">
         <img :src="item.imgUrl" alt="">
-        <span>{{ item.name }}</span>
+        <span>{{item.name}}</span>
       </div>
     </div>
 
-    <GoodsList :list="state.newGoodsList" title="新品上线" />
+    <GoodsList :list="state.newGoodsList" title="新品上线"/>
 
-    <GoodsList :list="state.hotGoodsList" title="热门商品" />
+    <GoodsList :list="state.hotGoodsList" title="热门商品"/>
 
-    <GoodsList :list="state.recommendGoodsList" title="最新推荐" />
+    <GoodsList :list="state.recommendGoodsList" title="最新推荐"/>
 
     <!-- footBar -->
     <NavBar />
@@ -107,7 +107,6 @@ onMounted(async () => {
   }
 
   const { data } = await getHome()
-  // console.log(data);
   state.swiperList = data.carousels
   state.newGoodsList = data.newGoodses
   state.hotGoodsList = data.hotGoodses
@@ -120,7 +119,7 @@ const goDetail = (name) => {
 
 
 nextTick(() => { // 写在nextTick中的逻辑一定会在页面加载完毕后执行
-  document.body.addEventListener('scroll', function () {
+  document.body.addEventListener('scroll',  function() {
     // console.log(this.scrollTop);
     this.scrollTop > 100 ? state.headerActive = true : state.headerActive = false
   })
@@ -192,19 +191,16 @@ nextTick(() => { // 写在nextTick中的逻辑一定会在页面加载完毕后�
       font-size: 16px;
     }
   }
-
-  .category-list {
+  .category-list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 5px;
-
-    div {
+    div{
       display: flex;
       flex-direction: column;
       // justify-content: center; 弹性容器主轴方向居中
       align-items: center;
-
-      img {
+      img{
         .wh(36px, 36px);
         margin: 13px auto 8px auto;
       }
