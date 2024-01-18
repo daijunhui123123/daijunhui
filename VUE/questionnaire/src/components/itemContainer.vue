@@ -19,8 +19,8 @@
                     <ul>
                         <li class="item_list" v-for="(item, index) in questionList[itemNum - 1].topic_answer"
                             @click="choosed(index, item.topic_answer_id)">
-                            <span class="option_style"
-                                :class="{ 'current': currentNum === index }">{{ chooseType(index) }}</span>
+                            <span class="option_style" :class="{ 'current': currentNum === index }">{{ chooseType(index)
+                            }}</span>
                             <span class="option_detail">{{ item.answer_name }}</span>
                         </li>
                     </ul>
@@ -186,4 +186,5 @@ export default {
 
 .submit_item {
     background-image: url(../assets/images/3-1.png);
-}</style>
+}
+</style>

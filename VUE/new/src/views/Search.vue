@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <div>
+        搜索页面
+    </div>
 </template>
 
 <script setup>
