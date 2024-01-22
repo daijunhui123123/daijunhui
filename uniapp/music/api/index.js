@@ -20,3 +20,9 @@ export const apiGetRecommendList = () => { // 推荐歌单
 		method: 'GET'
 	})
 }
+export const apiGetRecommendSongs = () => { // 推荐歌单
+	return uni.request({
+		url: baseUrl + '/recommend/songs',
+		method: 'GET'
+	})
+}

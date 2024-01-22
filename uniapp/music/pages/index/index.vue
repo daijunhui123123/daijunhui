@@ -33,22 +33,26 @@
 			</view>
 		</view>
 		
-		<!-- 专属推荐 -->
+		<!-- 推荐歌单 -->
 		<songList :list="state.recommendList"/>
-		
+		<!-- 推荐歌曲 -->
+		<recommendSong :list="state.recommendSongs"/>
+		<!-- xxx雷达歌单 -->
+		<songList :list="state.recommendList"/>
 		
 	</view>
 </template>
 
 <script setup>
-import { apiGetBanner, apiGetBall, apiGetRecommendList } from '@/api/index.js'
+import { apiGetBanner, apiGetBall, apiGetRecommendList, apiGetRecommendSongs } from '@/api/index.js'
 import { onLoad } from '@dcloudio/uni-app'
 import { reactive } from 'vue';
 
 const state = reactive({
 	banners: [],
 	balls: [],
-	recommendList: [] 
+	recommendList: [],
+	recommendSongs: [],
 })
 
 
@@ -56,6 +60,7 @@ onLoad(() => {
 	getBanner()
 	getBall()
 	getRecommendList()
+	getRecommendSongs()
 })
 
 // 获取banner图
@@ -74,8 +79,14 @@ const getBall = async() => {
 // 推荐歌单
 const getRecommendList = async() => {
 	const { data: { recommend: recommend }} = await apiGetRecommendList()
-	console.log(recommend);
+	// console.log(recommend);
 	state.recommendList = recommend
+}
+// 推荐歌曲
+const getRecommendSongs = async() => {
+	const res = await apiGetRecommendSongs()
+	console.log(res.data.data.dailySongs);
+	state.recommendSongs = res.data.data.dailySongs
 }
 
 </script>

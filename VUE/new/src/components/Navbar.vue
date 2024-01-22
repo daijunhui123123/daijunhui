@@ -1,17 +1,15 @@
 <template>
     <div Nav-container>
         <div class="Nav_top">
-            <van-nav-bar title="首页" left-text="返回" right-text="" left-arrow @click-left="onClickLeft"
-                @click-right="onClickRight">
-                <template #left>
-                    <van-icon name="search" size="18" />
-                </template>
-
+            <van-nav-bar title="标题">
                 <template #right>
-                    <van-icon name="user-o" size="18" />
+                    <van-icon name="search" size="18" @click="onClickLeft" />
                 </template>
-
+                <template #left>
+                    <van-icon name="location" size="18" @click="onClickRight" />
+                </template>
             </van-nav-bar>
+
 
 
 

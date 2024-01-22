@@ -1,19 +1,19 @@
-// 乐谱列表
+// 歌曲音质详情
+
 module.exports = (query, request) => {
   const data = {
-    id: query.id,
-    abTest: query.ab || 'b',
+    songId: query.id,
   }
   return request(
     'POST',
-    `https://interface3.music.163.com/eapi/music/sheet/list/v1`,
+    `https://interface3.music.163.com/eapi/song/music/detail/get`,
     data,
     {
       crypto: 'eapi',
       cookie: query.cookie,
       proxy: query.proxy,
+      url: '/api/song/music/detail/get',
       realIP: query.realIP,
-      url: '/api/music/sheet/list/v1',
     },
   )
 }
