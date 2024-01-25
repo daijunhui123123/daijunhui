@@ -7,83 +7,22 @@
 			</view>
 		</view>
 		<swiper class="swiper-wrap">
-			<swiper-item>
+			<swiper-item v-for="item in swiperList">
 				<view class="swiper-item">
-					<view class="song-item">
+					<view class="song-item" v-for="song in item">
 						<view class="song-detail">
 							<view class="pic">
-								<image src="../../static/logo.png" mode="aspectFill"></image>
+								<image :src="song.al.picUrl" mode="aspectFill"></image>
 							</view>
 							<view class="desc">
-								<view class="name">惊鸿一面</view>
-								<view class="author">许嵩</view>
+								<view class="name">{{song.al.name}}</view>
+								<view class="author">
+									<text class="reason" v-if="song.recommendReason">{{song.recommendReason}}</text>
+									{{song.ar[0].name}}
+								</view>
 							</view>
 						</view>
-						<view class="mv iconfont icon-video"></view>
-					</view>
-					<view class="song-item">
-						<view class="song-detail">
-							<view class="pic">
-								<image src="../../static/logo.png" mode="aspectFill"></image>
-							</view>
-							<view class="desc">
-								<view class="name">惊鸿一面</view>
-								<view class="author">许嵩</view>
-							</view>
-						</view>
-						<view class="mv iconfont icon-video"></view>
-					</view>
-					<view class="song-item">
-						<view class="song-detail">
-							<view class="pic">
-								<image src="../../static/logo.png" mode="aspectFill"></image>
-							</view>
-							<view class="desc">
-								<view class="name">惊鸿一面</view>
-								<view class="author">许嵩</view>
-							</view>
-						</view>
-						<view class="mv iconfont icon-video"></view>
-					</view>
-				</view>
-			</swiper-item>
-			<swiper-item>
-				<view class="swiper-item">
-					<view class="song-item">
-						<view class="song-detail">
-							<view class="pic">
-								<image src="../../static/logo.png" mode="aspectFill"></image>
-							</view>
-							<view class="desc">
-								<view class="name">惊鸿一面</view>
-								<view class="author">许嵩</view>
-							</view>
-						</view>
-						<view class="mv iconfont icon-video"></view>
-					</view>
-					<view class="song-item">
-						<view class="song-detail">
-							<view class="pic">
-								<image src="../../static/logo.png" mode="aspectFill"></image>
-							</view>
-							<view class="desc">
-								<view class="name">惊鸿一面</view>
-								<view class="author">许嵩</view>
-							</view>
-						</view>
-						<view class="mv iconfont icon-video"></view>
-					</view>
-					<view class="song-item">
-						<view class="song-detail">
-							<view class="pic">
-								<image src="../../static/logo.png" mode="aspectFill"></image>
-							</view>
-							<view class="desc">
-								<view class="name">惊鸿一面</view>
-								<view class="author">许嵩</view>
-							</view>
-						</view>
-						<view class="mv iconfont icon-video"></view>
+						<view class="mv iconfont icon-video" v-if="song.videoInfo.video"></view>
 					</view>
 				</view>
 			</swiper-item>
@@ -91,10 +30,12 @@
 	</view>
 </template>
 
-<script>
-const props=	defineProps({
-		list:Array
-	})
+<script setup>
+import { computed, onUpdated, ref } from 'vue';
+const props = defineProps({
+	list: Array
+})
+
 const swiperList = ref([])
 onUpdated(() => {
 	let arr = []
@@ -105,7 +46,7 @@ onUpdated(() => {
 		}
 		arr.push(item)
 	})
-	console.log(swiperList.value, '------');
+	// console.log(swiperList.value, '------');
 })
 </script>
 
@@ -135,6 +76,7 @@ onUpdated(() => {
 					image{
 						width: 100%;
 						height: 100%;
+						border-radius: 10px;
 					}
 				}
 				.desc{
@@ -146,6 +88,14 @@ onUpdated(() => {
 					.author{
 						font-size: 24rpx;
 						color: #666;
+						.reason{
+							font-size: 20rpx;
+							color: $uni-primary-color;
+							background-color: #f5e7e9;
+							padding: 0 4rpx;
+							border: 1rpx solid #f5e7e9;
+							border-radius: 4px;
+						}
 					}
 				}
 			}

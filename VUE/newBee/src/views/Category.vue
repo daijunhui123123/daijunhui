@@ -13,4 +13,11 @@ import NavBar from '../components/NavBar.vue';
 
 <style lang="less" scoped>
 
+
+
+
+
+
+
+
 </style>
