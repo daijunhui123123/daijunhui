@@ -3,12 +3,19 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app",
-			 "navigationStyle": "custom"
+				"navigationBarTitleText": "uni-app"
 			}
 		},
 		{
-			"path" : "pages/play/play",
+			"path" : "pages/store/store",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/shopping-car/shopping-car",
 			"style" : 
 			{
 				"navigationBarTitleText" : "",
@@ -22,38 +29,6 @@
 				"navigationBarTitleText" : "",
 				"enablePullDownRefresh" : false
 			}
-		},
-		{
-			"path" : "pages/follow/follow",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
-			}
-		},
-		{
-			"path" : "pages/community/community",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
-			}
-		},
-		{
-			"path" : "pages/login/login",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
-			}
-		},
-		{
-			"path" : "pages/songsList/songsList",
-			"style" : 
-			{
-				"navigationBarTitleText" : "",
-				"enablePullDownRefresh" : false
-			}
 		}
 	],
 	"globalStyle": {
@@ -61,18 +36,18 @@
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
-		
 	},
-     "tabBar": {
+	
+	 "tabBar": {
 	    "color": "#8a8a8a",
 		"selectedColor": "#d81e06",
 		"backgroundColor": "#fff",
 		"list": [
 			{
 				"pagePath": "pages/index/index",
-				"text": "发现",
-				"iconPath": "/static/icon/wangyiyun1.png",
-				"selectedIconPath": "/static/icon/wangyiyun1-active.png"
+				"text": "首页",
+				"iconPath": "",
+				"selectedIconPath": ""
 			},
 			{
 				"pagePath": "pages/play/play",
@@ -99,6 +74,6 @@
 				"selectedIconPath": "/static/icon/shequ-active.png"
 			}
 		]
-	},
+	}
 	"uniIdRouter": {}
 }
