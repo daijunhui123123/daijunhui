@@ -1,14 +1,14 @@
 <script>
-import baseUrl from '@/api/request.js'
-export default {
+	import baseUrl from '@/api/request.js'
+	export default {
 		onLaunch: function() {
 			console.log('App Launch')
 			// 判断用户是否登录
 			let key = uni.getStorageSync('cookie')
-			 // if (!key) {
-			 // 	this.$store.commit('changeLoginState', false)
-			 // 	return
-			// }
+			if (!key) {
+				this.$store.commit('changeLoginState', false)
+				return
+			}
 			// 获取登录状态
 			uni.request({
 				url: baseUrl + '/login/status',
@@ -41,7 +41,7 @@ export default {
 						cookie: key
 					},
 					success: (res) => {
-						console.log(res);
+						// console.log(res);
 						let nickname = res.data.profile && res.data.profile.nickname
 						let id = res.data.profile && res.data.profile.userId
 						let avatar = res.data.profile && res.data.profile.avatarUrl
@@ -55,7 +55,7 @@ export default {
 
 <style>
 	/*每个页面公共css */
-	@import url("https://at.alicdn.com/t/c/font_4416312_1m932ehvlrq.css");
+	@import url("https://at.alicdn.com/t/c/font_4416312_nx5ij0249e.css");
 	*{
 		margin: 0;padding: 0;
 	}
