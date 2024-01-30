@@ -1,5 +1,6 @@
 <template>
-    <div class="myself-container">
+    <div class="petcircle-container">
+        萌友圈
         <Footbar />
     </div>
 </template>

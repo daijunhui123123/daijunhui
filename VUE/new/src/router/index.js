@@ -29,6 +29,23 @@ const routes = [
         name: 'search',
         component: () => import('../views/Search.vue')
 
+    },
+    {
+        path: '/fostercare',
+        name: 'fostercare',
+        component: () => import('../views/FosterCare.vue')
+
+    }, {
+        path: '/mall',
+        name: 'mall',
+        component: () => import('../views/Mall.vue')
+
+    },
+    {
+        path: '/petcircle',
+        name: 'petcircle',
+        component: () => import('../views/Petcircle.vue')
+
     }
 ]
 

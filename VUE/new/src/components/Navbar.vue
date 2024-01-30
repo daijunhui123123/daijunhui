@@ -7,6 +7,7 @@
                 </template>
                 <template #left>
                     <van-icon name="location" size="18" @click="onClickRight" />
+                    <span>大雁塔</span>
                 </template>
             </van-nav-bar>
 
@@ -31,4 +32,22 @@ const onClickRight = () => {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="less" scoped>
+.Nav_top {
+    width: 100%;
+    height: 40px;
+
+    span {
+
+        width: 42px;
+        height: 21px;
+
+
+        color: rgba(80, 80, 80, 1);
+        font-size: 14px;
+
+
+
+    }
+}
+</style>
