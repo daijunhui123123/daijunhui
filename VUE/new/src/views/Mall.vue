@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="product-list">
-            <div class="list" v-for="item  in 8">
+            <div class="list" v-for="item  in 8" @click="goList">
                 <div class="img">
                     <img src="https://img.yzcdn.cn/vant/cat.jpeg" alt="">
                 </div>
@@ -43,6 +43,8 @@
             充值下单更优惠
         </div>
         <product title="热卖专区" />
+        <product title="新品专区" />
+        <product title="为你推荐" />
         <Footbar />
     </div>
 </template>
@@ -50,6 +52,10 @@
 <script setup>
 import Footbar from '@/components/Footbar.vue'
 import product from '@/components/product.vue'
+import { showToast } from 'vant';
+const goList = () => { //跳转列表页
+    showToast('还未开发');
+}  
 </script>
 
 <style lang="less" scoped>

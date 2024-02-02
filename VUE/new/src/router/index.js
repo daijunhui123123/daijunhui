@@ -47,6 +47,13 @@ const routes = [
         component: () => import('../views/Petcircle.vue')
 
     }
+    ,
+    {
+        path: '/item',
+        name: 'item',
+        component: () => import('../views/Item.vue')
+
+    }
 ]
 
 const router = createRouter({

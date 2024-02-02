@@ -17,7 +17,6 @@
                 //发送http请求
                 let xhr = new XMLHttpRequest()
                 xhr.open('GET', 'http://192.168.31.26:3000/top/song?type=7', true)   // 第一个参数  get
-                xhr.send()
                 xhr.onreadystatechange = () => {
                     if (xhr.readyState === 4 && xhr.status === 200) {
                         const result = JSON.parse(xhr.responseText).data
