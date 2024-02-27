@@ -6,7 +6,7 @@
 ## 对象转原始类型 obj.toString() 
    ### obj.valueOf()
    只对包装类类型有效
-  对象转布尔都为true
+  对象转布尔都为false
 toString() 在js中有多个版本:
 
  1. {}.toString() // "[object class]"
