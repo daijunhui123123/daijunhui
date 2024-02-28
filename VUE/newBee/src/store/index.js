@@ -8,7 +8,7 @@ const store = createStore({
     }
   },
   mutations: {  // === methods  专职修改state
-    setCartCount(state, count) { 
+    setCartCount(state, count) {
       state.cartCount = count
     }
   },
@@ -18,7 +18,7 @@ const store = createStore({
       // console.log(data);
       context.commit('setCartCount', data.length)
     }
-    
+
   },
   getters: { // === computed
 
