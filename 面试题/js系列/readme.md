@@ -160,9 +160,57 @@ Object.assign()  浅拷贝 concat()   slice()   [...arr]
  - 构造函数有返回值，且为引用类型时会覆盖new当中的函数
 
 
-# 手写call，apply，bind
+# 手写call，apply，bind    
 
- 
+
+
+# 说说事件模型  
+   -什么事件流： 事件流描述的是从页面中接收事件的顺序
+   - 事件冒泡： 事件开始由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）
+   - 事件捕获： 事件开始由不太具体的节点先接收，而最具体的节点最后接收事件
+   - DOM
+
+1. DOM0级    onclick (无法控制事件在捕获冒泡哪一个阶段触发)
+2. DOM1级    addeventlistener(第三个参数为布尔值，true为捕获阶段，false为冒泡阶段)
+3. IE模型     attachEvent (无法控制事件在捕获冒泡哪一个阶段触发)
+  
+# 说说typeof和instanceof的区别
+
+- typeof
+   能判断除了null之外的数据类型   
+
+
+- instanceof
+能判断一个变量是够属于某个类型，是通过原型链来判断的    
+
+- object.prototype.toString.call(xxx)
+
+1. [].tostring.call(xxx) 
+
+
+- Array.isArray(xxx)  
+
+
+#  说说Ajax的原理  
+   - 是什么
+   Async Javascript  and    XML (异步的JavaScript和XML),是一种异步js和网页交互的技术，可以实现不刷新就跟服务器端进行数据交互，减少用户等待时间，提高用户体验
+
+
+   - 怎么用
+   1. 创建XMLHttpRequest对象
+   2. 调用实例对象上的open方法与服务器建立连接
+   3. 调用实例对象上的send方法发送请求
+   4. 监听实例对象上的readystatechange事件，通过判断readyState的值来确定请求的状态
+   5. 将数据更新到页面  
+
+#  这么实现上拉加载下拉刷新
+   三方库   BetterScroll
+   vant    
+   1. 监听  touchstart   touchmove   touchend   事件，记录手指移动的距离，大于临界值时实现，刷新操作，其中使用transform:translateY(0)实现  
+
+
+# 防抖节流  
+    
 
 
 

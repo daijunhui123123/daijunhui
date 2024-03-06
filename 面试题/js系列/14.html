@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="hello" onclick="handle()">
+
+    </div>
+    <div id="box">
+        <div id="box2">
+
+        </div>
+    </div>
+
+    <script>
+        //dom  0
+        function handle() {
+            console.log('handle')
+        }
+        //Dom1
+        var box = document.getElementById('box');
+        box.onclick = function () {
+            console.log('box', this)  //this指向box
+        }
+    </script>
+</body>
+
+</html>

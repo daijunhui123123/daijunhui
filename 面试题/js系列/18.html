@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+    <script>
+
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', debounce(handle))
+        function handle() {
+            console.log('点击了按钮');
+        }
+        function debounce(fn, wait) {
+            return function () {
+                setTimeout(() => {
+                    fn
+                }, wait)
+            }
+        }
+
+    </script>
+</body>
+
+</html>
