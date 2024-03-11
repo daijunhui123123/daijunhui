@@ -1,0 +1,7 @@
+let id=docment.getElementById('myDiv')
+<!-- // 获取元素
+    let box=id.getElementsByClassName('box')
+      box[0].style.background='red'
+      for(let i=0;i<box.length;i++){
+        box[i].style.background='red'
+      } -->

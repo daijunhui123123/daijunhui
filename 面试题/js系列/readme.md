@@ -212,6 +212,31 @@ Object.assign()  浅拷贝 concat()   slice()   [...arr]
 # 防抖节流  
     
 
+# 19 事件代理  
+
+- 事件委托  （多个子容器需要绑定相同的事件）
+
+
+# 说说js的事件循环  
+   - 什么是事件循环
+
+   js在引擎在执行js放入过程中会区分同布代码和异步代码，先执行同步在执行异步代码，异步中同样按照先执行同步在
+   执行异步的策列，以此往复的循环  
+
+ - 异步  
+    1. 宏任务   script  setTimeout   setInterval   I/O（node里面的）  UI渲染   setImmediate   UI-rendering   
+            postMassage   MessageChannel
+    2. 微任务  .then nexTick（node里面的）  MutationObserver（浏览器里面的,监听一个dom结构是否修改）  
+
+
+   - Event-Loop
+   1. 执行同步代码  （也叫宏任务）
+   2. 执行微任务   （完毕）
+   3. 有需要的话  就渲染页面   
+   4. 执行宏任务（下一次执行开始）   
+ 
+
+
 
 
 

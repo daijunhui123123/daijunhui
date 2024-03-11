@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box1 {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+
+    }
+
+    .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+
+    }
+</style>
+
+<body>
+    <!-- <div class="box1">
+        <div class="box2">
+
+        </div>
+    </div>
+    <script>
+        let box1 = document.querySelector('.box1')
+        let box2 = document.querySelector('.box2')
+        box1.addEventListener('click', function () {
+            console.log('box1');
+        })
+        box2.addEventListener('click', function (e) {
+            console.log('box2');
+
+        })
+
+    </script> -->
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+
+    <script>
+        //    let lis=document.querySelectorAll('li')
+        //      lis.forEach(function(element){
+        //          element.addEventListener('click',function(){
+        //              console.log(li.innerHTML);
+        //          })
+        //      })
+
+        // 事件委托
+        let ul = document.querySelector('ul')
+        ul.addEventListener('click', function (e) {
+            console.log(e.target.innerHTML);
+        })
+    </script>
+</body>
+
+</html>
