@@ -1,17 +1,58 @@
-// const a = []
-// a.unshift(1)
-// a.push(2)
 
-// a.forEach(v => console.log(v))
+// var a = 1
+// function change(x) {
+//     x = 3
+// }
+// change(a)
+// console.log(a) // 打印结果  1
+// 题目2
+// var o = { a: 1 }
+// function change(obj) {
+//     o.a = 2
+// }
+// change(o) // 打印结果
+// console.log(o.a) // 2
+// // 题目3
+// var o = { a: 1 }
+// function change(obj) {
+//     o.a = 2
+//     o = { n: 3 }
+//     o.a = 1
+// }
+// change(o)
+// console.log(o.a) //    1
+// var a = 5;
+// (function () {
+//     var a = 200
+//     console.log(a)
+//     a = 50
+//     console.log(window.a)
+//     var a = 100
+//     console.log(a)
+// })()
 
-// const n = {}
-const a = new Map()
+// function fn() {
+//     return new Promise(function (resolve, reject) {
+//         setTimeout(() => {
+//             resolve()
 
-a.set('a', 1)
-a.set('b', 2)
-a.set('c', 3)
-a.forEach((v, k) => console.log(k, v))
+//         }, 1000);
+//     })
+// }
+// setTimeout(() => {
+//     console.log(1)
+// }, 1000);
 
+// fn().then(() => {
+//     console.log(1)
+// })
 
+// async function fn() {
+//     const a = setTimeout(() => {
+//         console.log(1)
+//     })
+//     console.log(a)
+// }
 
-console.log()
+// console.log(2)
+

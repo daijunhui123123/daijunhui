@@ -50,14 +50,8 @@
     </ul>
 
     <script>
-        //    let lis=document.querySelectorAll('li')
-        //      lis.forEach(function(element){
-        //          element.addEventListener('click',function(){
-        //              console.log(li.innerHTML);
-        //          })
-        //      })
-
-        // 事件委托
+        // 事件委托的核心原理：给父节点添加侦听器， 利用事件冒泡影响每一个子节点    
+        // 利用这个原理， 把事件加到父元素上， 触发的是父元素的点击， 然后利用事件冒泡影响每一个子节点
         let ul = document.querySelector('ul')
         ul.addEventListener('click', function (e) {
             console.log(e.target.innerHTML);

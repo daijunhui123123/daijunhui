@@ -1,3 +1,37 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .parent {
+        /* display: flex; */
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .child {
+        background-color: red;
+        /* background-color: red;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); */
+    }
+</style>
+
+<body>
+    <div class="parent">
+        <div class="child">mask</div>
+    </div>
+</body>
+
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,27 +40,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    /* .parent {
+        display: flex;
+        background-color: pink;
+        width: 100%;
+        height: 100px;
+
+    }
+
+    .child1 {
+        flex: 1;
+
+    }
+
+    .child2 {
+
+        width: 100px;
+        height: 100px;
+        background-color: red;
+
+    } */
+    .parent {
+        width: 100%;
+        height: 100px;
+        background-color: pink;
+        display: grid;
+        grid-template-columns: 1fr 100px;
+    }
+
+    .child1 {
+        background-color: blue;
+    }
+
+    .child2 {
+        background-color: red;
+    }
+</style>
 
 <body>
-    <button id="btn">提交</button>
-
-    <script>
-        let btn = document.getElementById('btn')
-        btn.addEventListener('click', throttle(handle, 1000))
-        function handle() {
-            console.log('提交了', this);
-        }
-        function throttle(func, wait) {
-            let lastTime = Date.now()
-            return function (...args) {
-                let now = Date.now()
-                if (now - lastTime > wait) {
-                    func.apply(this, args)
-                    lastTime = now
-                }
-            }
-        }
-    </script>
+    <div class="parent">
+        <div class="child1"></div>
+        <div class="child2"></div>
+    </div>
 </body>
 
 </html>
