@@ -1,5 +1,5 @@
 {
-  "name": "vue-demo",
+  "name": "write-vuex",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "vue": "^3.3.11",
-    "vue-router": "^4.3.0"
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
