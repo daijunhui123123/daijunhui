@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <h2>{{message}}</h2>
+    <script>
+
+        Vue.component('child1', {
+            template: '<div>组件</div>',
+            data: function () {
+                return {
+                    message: 'Hello Vue!'
+                }
+            }
+        })
+        // 创建一个Vue实例
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+
+        // 获取Vue实例的属性
+    </script>
+</body>
+
+</html>

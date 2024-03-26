@@ -49,9 +49,98 @@ web的开发，主要靠mvvm的驱动方式来实现试图的更新
      1. vue的数据源会被劫持，在劫持的过程中为属性做依赖，
 
     
+#  生命周期   
+    
 
 
-
-
-
+# vue的组件通信  
    
+onBeforeMount: 在组件挂载之前调用。
+onMounted: 在组件挂载后调用。
+onBeforeUpdate: 在组件更新之前调用，即在数据变化导致重新渲染之前。
+onUpdated: 在组件更新完成后调用。
+onBeforeUnmount: 在组件卸载之前调用。
+onUnmounted: 在组件卸载后调用。
+onActivated: 当组件被 <keep-alive> 缓存并且再次被激活时调用。
+onDeactivated: 当组件被 <keep-alive> 缓存并且离开缓存时调用。
+
+ Vue 3 中，使用选项式 API（Options API）时，常见的生命周期钩子函数包括：
+
+beforeCreate: 在实例初始化之后，数据观测 (data observer) 和 event/watcher 事件配置之前被调用。
+created: 实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算，watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。
+beforeMount: 在挂载开始之前被调用：相关的 render 函数首次被调用。
+mounted: el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。
+beforeUpdate: 数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。可以在该钩子中进一步地更改状态，不会触发附加的重渲染过程。
+updated: 由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。
+beforeUnmount: 在卸载组件之前调用。
+unmounted: 卸载组件后调用。
+
+
+# 组件通信 
+
+1. 父子组件通信  子组件Props 接受
+
+2. 子父通信   子组件 emit 发布一个事件，父组件订阅事件
+
+3. 子父通信  子组件拿到父组件的数据并修改后emit 事件，靠父组件v-model 
+
+4. 子父通信  子组件defineExpose 暴露出来的值，父组件利用ref读取整个子组件对象来获取值
+
+5. 父子通信  父组件 provied 子组件 inject 接受
+
+6. EventBus   靠mitt插件  
+
+7. vuex
+
+8. pinia
+
+
+#  v-for 和  v-if   共存嘛  
+
+1. v2中，v-for优先级更高会被报警告，因为性能浪费
+
+2. v3中，v-if的优先级更高，没有用到for中的变量是不会报错的
+
+# data为什么要是一个函数
+   
+
+# 什么是虚拟dom
+   1. 一个用js对象来描述的Dom结构  
+   2. 当一次操作导致多处DOM需要修改，不适合用虚拟DOM，浏览器需要重新一个一个构建这个DOM树，
+   导致多处渲染，但是少量DOM更新diff算法同样存在性能开销
+
+   3. 跨平台  
+
+
+## 说说diff
+   - 同层级比较
+   - 深度优先
+   pathVnode 步骤：
+   1. 判断节点是不是文本，是的话直接更新文本  
+   2. 判断节点类型是否相同，不同则直接替换
+   3. 比较子节点，不断生成补丁包
+
+
+
+   - 双端队列
+   提升比较的效率 
+
+## vue的修饰符  
+
+
+## v2和v3的区别
+
+1. 速度更快：
+       虚拟dom实现的函数被重写，效率提升 
+       编译模板的优化
+2. 体积更小：
+   对  （tree-shaking） 这个是webpack中的算法   更彻底
+3. 更易维护： 
+   函数式编程 ，更好的TS    
+3. 更易维护
+4. 更接近原生语法
+5.   v3 templet 支持多个根节点
+6. teleport 组件
+7. 响应式区别   
+
+
